@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything Everywhere All At Once - Next Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="next-background" id="nextPageBackground">
+        <div class="speech-bubble"></div>
+    </div>
+    <img class="next-page-arrow" src="arrow.png" alt="Next Page Arrow" onclick="goToNextPage()">
+
+    <script src="script.js"></script>
+   
+    <script>
+   window.onload = function() {
+    var dialogueParts = [
+        "..." ,
+        "Ah, you're finally here!",
+        "Well, you're here, but, also... anywhere else. You'll get it later.",
+        "You'll need to use your creativity if you want to make it out." ,
+        "There are hidden portals everywhere!",
+        "Every universe... a new you.. a new me... " ,
+        "ENDLESS POSSIBILITIES!! HAHAHAHA"
+
+    ];
+
+    var currentPartIndex = 0;
+
+    function updateSpeechBubble() {
+        var speechBubble = document.querySelector('.speech-bubble');
+        speechBubble.textContent = dialogueParts[currentPartIndex];
+        if (currentPartIndex === dialogueParts.length - 1) {
+            document.querySelector('.next-page-arrow').style.display = 'block'; 
+        }
+        currentPartIndex++;
+    }
+
+    function clickHandler() {
+        updateSpeechBubble();
+    }
+
+    document.addEventListener('click', clickHandler);
+}
+
+function goToNextPage() {
+    window.location.href = 'page3.html';
+}
+
+</script>
+</body>
+</html>
+
