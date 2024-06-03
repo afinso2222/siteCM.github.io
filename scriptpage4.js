@@ -91,6 +91,7 @@ document.addEventListener('mouseup', function(event) {
         var dialogue = document.getElementById('dialogue');
         dialogue.textContent = dialogues[dialogueIndex];
         speechBubble.classList.remove('hidden');
+        playDialogueSound()
 
         
         dialogueIndex++;
@@ -113,7 +114,13 @@ document.addEventListener('mouseup', function(event) {
         return Math.random() * 8000 + 2000; 
     }
     
-    
+    var audio = document.getElementById('backgroundmusic4');
+audio.volume = 0.5; 
+
+
+document.body.addEventListener('click', function() {
+    audio.play();
+}, { once: true });
     
     function moveFish() {
         var fish = document.getElementById('fish-container');
@@ -151,6 +158,11 @@ document.addEventListener('mouseup', function(event) {
     moveFish();
 
 };
+
+function playDialogueSound() {
+    var dialogueSound = document.getElementById('dialogueSound');
+    dialogueSound.play();
+}
 
 function goToNextPage() {
     window.location.href = 'page4.html';

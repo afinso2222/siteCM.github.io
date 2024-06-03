@@ -29,7 +29,7 @@ var dialogueIndex = 0;
         var dialogue = document.getElementById('dialogue');
         dialogue.textContent = dialogues[dialogueIndex];
         speechBubble.classList.remove('hidden');
-
+      playDialogueSound();
         
         dialogueIndex++;
 
@@ -68,7 +68,15 @@ var dialogueIndex = 0;
             pedraastro.style.top = moveY + 'px';
         }
     });
+    var audio = document.getElementById('backgroundMusic');
+    audio.volume = 0.5; 
+    
+    
+    document.body.addEventListener('click', function() {
+        audio.play();
+    }, { once: true });
 
+  
     
     document.addEventListener('mouseup', function(event) {
         if (isDragging) {
@@ -88,4 +96,8 @@ var dialogueIndex = 0;
             }, 1600);
         }
     });
+    function playDialogueSound() {
+        var dialogueSound = document.getElementById('dialogueSound');
+        dialogueSound.play();
+    }
 }

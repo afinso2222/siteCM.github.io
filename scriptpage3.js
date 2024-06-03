@@ -71,7 +71,7 @@ window.onload = function() {
         var dialogue = document.getElementById('dialogue');
         dialogue.textContent = dialogues[dialogueIndex];
         speechBubble.classList.remove('hidden');
-
+        playDialogueSound()
         
         dialogueIndex++;
 
@@ -88,6 +88,19 @@ window.onload = function() {
         displayDialogue();
     });
 };
+
+var audio = document.getElementById('backgroundmusic3');
+audio.volume = 0.5; 
+
+
+document.body.addEventListener('click', function() {
+    audio.play();
+}, { once: true });
+
+function playDialogueSound() {
+    var dialogueSound = document.getElementById('dialogueSound');
+    dialogueSound.play();
+}
 
 function goToNextPage() {
     window.location.href = 'page4.html';

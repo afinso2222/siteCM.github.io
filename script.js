@@ -18,6 +18,18 @@ document.getElementById('bagel').addEventListener('click', function() {
     }, 1000); 
 });
 
+var audio = document.getElementById('backgroundMusic');
+audio.volume = 0.5; 
+
+
+document.body.addEventListener('click', function() {
+    audio.play();
+}, { once: true });
+
+function playDialogueSound() {
+    var dialogueSound = document.getElementById('dialogueSound');
+    dialogueSound.play();
+}
 
 function goToNextPage() {
     window.location.href = 'page3.html';

@@ -10,6 +10,9 @@
     <div class="next-background" id="nextPageBackground">
         <div class="speech-bubble"></div>
     </div>
+    <audio controls loop id="backgroundmusic2" src="first.mp3"></audio>
+
+    <audio id="dialogueSound" src="dialogue.mp3"></audio>
     <img class="next-page-arrow" src="arrow.png" alt="Next Page Arrow" onclick="goToNextPage()">
 
     <script src="script.js"></script>
@@ -32,6 +35,7 @@
     function updateSpeechBubble() {
         var speechBubble = document.querySelector('.speech-bubble');
         speechBubble.textContent = dialogueParts[currentPartIndex];
+        playDialogueSound();
         if (currentPartIndex === dialogueParts.length - 1) {
             document.querySelector('.next-page-arrow').style.display = 'block'; 
         }
@@ -42,12 +46,23 @@
         updateSpeechBubble();
     }
 
+    var audio = document.getElementById('backgroundmusic2');
+audio.volume = 0.5; 
+
+
+document.body.addEventListener('click', function() {
+    audio.play();
+}, { once: true });
+
+
     document.addEventListener('click', clickHandler);
 }
 
 function goToNextPage() {
     window.location.href = 'page3.html';
 }
+
+
 
 </script>
 </body>

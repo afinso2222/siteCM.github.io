@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .space-background {
@@ -28,6 +29,10 @@ html, body {
     cursor: pointer;
 }
 
+#backgroundMusic{
+    display: none;
+}
+    
 
 
 .next-background {
@@ -58,13 +63,14 @@ html, body {
     left: 20%;
     transform: translate(-50%, -50%);
     z-index: 1000; 
+    user-select: none;
 }
 
 .next-page-arrow {
     display: none;
     position: fixed;
-    right: 20px;
-    bottom: 300px;
+    right: 100px;
+    bottom: 350px;
     cursor: pointer;
     width: 120px; 
     height: auto; 
@@ -93,7 +99,7 @@ html, body {
     left: 16%;
     cursor: pointer;
     z-index: 1; 
-    width: 130px; 
+    width: 120px; 
     height: auto; 
     z-index: 0; 
 }
@@ -122,6 +128,7 @@ html, body {
     left: 30%;
     transform: translate(-50%, -50%);
     z-index: 1000;
+    user-select: none;
 }
 
 
@@ -149,6 +156,7 @@ html, body {
     left: 30%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    user-select: none;
 }
 
 
@@ -255,4 +263,5 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    user-select: none;
 }
